@@ -60,6 +60,12 @@ class Zombie:
         self.x, self.y, frame_width // 2, frame_height // 2)
 
 
+
+class Ball:
+
+
+
+
 def reset_world():
     global running
 
@@ -78,6 +84,9 @@ def reset_world():
 
     zombie = Zombie()
     world.append(zombie)
+
+    balls = [Ball() for _ in range(20)]
+    world += balls
     
     pass
 
