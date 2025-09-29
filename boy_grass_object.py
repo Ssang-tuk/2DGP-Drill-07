@@ -13,6 +13,8 @@ class Grass:
         self.image.draw(400, 30)
         pass
 
+    def update(self):
+        pass
 
 
 def handle_events():
@@ -37,6 +39,12 @@ class Boy:
 
     pass
 
+    def update(self):
+        self.frame = (self.frame + 1) % 8
+        self.x += 5
+        pass
+
+
 def reset_world():
     global running
     global grass
@@ -48,7 +56,11 @@ def reset_world():
     
     pass
 
+#게임 로직, 객체들의 상호작용을 시뮬레이션
 def update_world():
+    grass.update()
+    boy.update() # 소년의 상호작용을 시뮬레이션 계산
+
     pass
 
 
