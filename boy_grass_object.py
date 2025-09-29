@@ -2,6 +2,11 @@ from pico2d import *
 import random
 
 class Grass:
+    #생성자함수, 초기화수행
+    def __init__(self):  # 개체의 속성을 정의하고 초기값을 알려주는 기능
+        # grass 객체의 속성을 정의하고 초기화
+        self.image = load_image('grass.png')
+
     pass
 
 
