@@ -68,9 +68,9 @@ class Ball_1:
         self.y = 599
 
     def draw(self):
-
+        self.image.draw (self.x, self.y)
     def update(self):
-        self.y += random.randint(1, 3)
+        self.y -= random.randint(1, 3)
 
 
 
@@ -83,9 +83,9 @@ class Ball_2:
 
 
     def draw(self):
-
+        self.image.draw(self.x, self.y)
     def update(self):
-        self.y += random.randint(1, 3)
+        self.y -= random.randint(1, 3)
 
 
 def reset_world():
@@ -111,7 +111,7 @@ def reset_world():
     world += balls_1
 
     balls_2 = [Ball_2() for _ in range(10)]
-    world += balls_1
+    world += balls_2
     
     pass
 
