@@ -74,8 +74,6 @@ class Ball_1:
         if self.y < 60:
             self.y = 60
 
-
-
 class Ball_2:
 
     def __init__(self):
@@ -90,8 +88,6 @@ class Ball_2:
         self.y -= self.speed
         if self.y < 70:
             self.y = 70
-
-
 
 def reset_world():
     global running
@@ -144,7 +140,5 @@ while running:
     update_world()
     render_world()
     delay(0.05)
-
-
 
 close_canvas()
