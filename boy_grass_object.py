@@ -1,6 +1,10 @@
 from pico2d import *
 import random
 
+class Grass:
+    pass
+
+
 def handle_events():
     global running
     events = get_events()
@@ -10,7 +14,22 @@ def handle_events():
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
 
-
 open_canvas()
+
+def reset_world():
+
+    pass
+
+
+
+reset_world()
+
+while True:
+    handle_events()
+    update_world()
+    render_world()
+    delay(0.05)
+
+
 
 close_canvas()
