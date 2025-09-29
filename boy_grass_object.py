@@ -70,7 +70,7 @@ class Ball_1:
     def draw(self):
 
     def update(self):
-
+        self.y += random.randint(1, 3)
 
 
 
@@ -85,7 +85,7 @@ class Ball_2:
     def draw(self):
 
     def update(self):
-
+        self.y += random.randint(1, 3)
 
 
 def reset_world():
