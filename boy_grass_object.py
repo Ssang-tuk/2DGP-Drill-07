@@ -22,14 +22,23 @@ def handle_events():
 open_canvas()
 
 def reset_world():
+    global running
+    global grass
+    
+    running = True
+    grass = Grass()
+    pass
 
+def update_world():
     pass
 
 
+def render_world():
+    pass
 
 reset_world()
 
-while True:
+while running:
     handle_events()
     update_world()
     render_world()
