@@ -66,11 +66,13 @@ class Ball_1:
         self.image = load_image('ball21x21.png')
         self.x = random.randint(100, 700)
         self.y = 599
-
+        self.speed = random.randint(2, 5)
     def draw(self):
         self.image.draw (self.x, self.y)
     def update(self):
-        self.y -= random.randint(1, 3)
+        self.y -= self.speed
+        if self.y < 60:
+            self.y = 60
 
 
 
@@ -80,12 +82,15 @@ class Ball_2:
         self.image = load_image('ball41x41.png')
         self.x = random.randint(100, 700)
         self.y = 599
-
+        self.speed = random.randint(2, 5)
 
     def draw(self):
         self.image.draw(self.x, self.y)
     def update(self):
-        self.y -= random.randint(1, 3)
+        self.y -= self.speed
+        if self.y < 70:
+            self.y = 70
+
 
 
 def reset_world():
