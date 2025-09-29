@@ -9,6 +9,10 @@ class Grass:
 
     pass
 
+    def draw(self):
+        self.image.draw(400, 30)
+        pass
+
 
 def handle_events():
     global running
@@ -34,6 +38,10 @@ def update_world():
 
 
 def render_world():
+    #월드의 객체들을 그린다
+    clear_canvas()
+    grass.draw()
+    update_canvas()
     pass
 
 reset_world()
