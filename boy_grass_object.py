@@ -33,7 +33,7 @@ class Boy:
     def __init__(self):
         self.image = load_image('run_animation.png')
         self.x = random.randint(0, 400)
-        self.frame = 0
+        self.frame = random.randint(0, 7)
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, 90)
 
@@ -47,20 +47,27 @@ class Boy:
 
 def reset_world():
     global running
-    global grass
-    global team
-    running = True
-    grass = Grass()
 
+    global world # world list = 모든 객체들을 갖고있는 리스트
+
+    world = [] # 하나도 객체가 없는 월드
+    running = True
+
+    #땅을 만들고 월드에 추가
+    grass = Grass()
+    world.append(grass)
+
+    #소년 11명을 만들고 월드에 추가
     team = [Boy() for _ in range(11)]
+    world += team
     
     pass
 
+
 #게임 로직, 객체들의 상호작용을 시뮬레이션
 def update_world():
-    grass.update()
-    for boy in team:
-        boy.update() # 소년의 상호작용을 시뮬레이션 계산
+    for game_object in world:
+        game_object.update()
 
     pass
 
@@ -68,9 +75,8 @@ def update_world():
 def render_world():
     #월드의 객체들을 그린다
     clear_canvas()
-    grass.draw()
-    for boy in team:
-        boy.draw()
+    for game_object in world:
+        game_object.draw()
     update_canvas()
     pass
 
