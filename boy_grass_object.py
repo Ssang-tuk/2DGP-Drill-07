@@ -7,8 +7,6 @@ class Grass:
         # grass 객체의 속성을 정의하고 초기화
         self.image = load_image('grass.png')
 
-    pass
-
     def draw(self):
         self.image.draw(400, 30)
         pass
@@ -30,19 +28,36 @@ open_canvas()
 
 
 class Boy:
+
     def __init__(self):
         self.image = load_image('run_animation.png')
         self.x = random.randint(0, 400)
         self.frame = random.randint(0, 7)
+
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, 90)
-
-    pass
 
     def update(self):
         self.frame = (self.frame + 1) % 8
         self.x += 5
         pass
+
+class Zombie:
+
+    def __init__(self):
+        self.x, self.y = 100, 170
+        self.frame = 0
+        self.image = load_image('zombie_run_animation.png')
+
+    def update(self):
+        self.frame = (self.frame + 1) % 10
+        self.x += 5
+
+    def draw(self):
+        frame_width = self.image.w // 10
+        frame_height = self.image.h
+        self.image.clip_draw(self.frame * frame_width, 0, frame_width, frame_height,
+        self.x, self.y, frame_width // 2, frame_height // 2)
 
 
 def reset_world():
@@ -60,6 +75,9 @@ def reset_world():
     #소년 11명을 만들고 월드에 추가
     team = [Boy() for _ in range(11)]
     world += team
+
+    zombie = Zombie()
+    world.append(zombie)
     
     pass
 
