@@ -60,9 +60,31 @@ class Zombie:
         self.x, self.y, frame_width // 2, frame_height // 2)
 
 
+class Ball_1:
 
-class Ball:
+    def __init__(self):
+        self.image = load_image('ball21x21.png')
+        self.x = random.randint(100, 700)
+        self.y = 599
 
+    def draw(self):
+
+    def update(self):
+
+
+
+
+class Ball_2:
+
+    def __init__(self):
+        self.image = load_image('ball41x41.png')
+        self.x = random.randint(100, 700)
+        self.y = 599
+
+
+    def draw(self):
+
+    def update(self):
 
 
 
@@ -85,8 +107,11 @@ def reset_world():
     zombie = Zombie()
     world.append(zombie)
 
-    balls = [Ball() for _ in range(20)]
-    world += balls
+    balls_1 = [Ball_1() for _ in range(10)]
+    world += balls_1
+
+    balls_2 = [Ball_2() for _ in range(10)]
+    world += balls_1
     
     pass
 
